@@ -1,0 +1,59 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu__content {
+    margin: auto;
+    width: 80%;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.nav li a {
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.nav li a:hover {
+    background-color: #a7a3a3d3;
+}
+
+.nav > li {
+    float: left;
+    position: relative;
+}
+
+.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+    background-color: #000; /* Agregado para visibilidad */
+}
+
+.nav li:hover > ul {
+    display: block;
+}
+
+.nav li ul li {
+    position: relative;
+}
+
+/* Separar submenús dentro de submenús */
+.nav li ul li ul {
+    left: 140px; /* Mueve los submenús más a la derecha */
+    top: 0px;
+}
+
+/* Añadir separación extra en niveles más profundos */
+.nav li ul li ul li ul {
+    left: 140px; /* Mueve más a la derecha */
+    top: 0px;
+}
+
+ 
