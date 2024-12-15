@@ -7,7 +7,7 @@
 </head>
 <body>
     <main>
-        <form action="../../Services/Auth/AuthService.php" method="POST">
+        <form action="../../Services/Auth/AuthLoginService.php" method="POST">
             <div class="form" style="text-align: center;">
                 <label for="email" i >Correo Electrónico</label>
                 <input type="text" id="email" name="email" required>  

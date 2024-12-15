@@ -4,7 +4,7 @@ require_once "../Config/Conexion.php";
 class UsersController extends Conexion {
     public function login($email, $password) {
         try {
-            $this->set_names();  // Establecer la codificación de caracteres
+            $this->set_names();   
 
             $sql = "SELECT * FROM usuarios WHERE email = :email";
             $stmt = $this->dbh->prepare($sql);   
@@ -14,7 +14,7 @@ class UsersController extends Conexion {
             if ($stmt->rowCount() > 0) {
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                // Validar contraseña
+              
                 if (password_verify($password, $user['password'])) {
                     $_SESSION['user_id'] = $user['id'];
                     $_SESSION['email'] = $user['email'];
