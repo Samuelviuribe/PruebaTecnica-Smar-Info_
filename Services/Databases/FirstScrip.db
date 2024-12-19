@@ -1,0 +1,108 @@
+-- Active: 1729021216535@@localhost@3306@pruebatecnica
+DROP TABLE IF EXISTS Personas; 
+DROP TABLE IF EXISTS Departamentos; 
+DROP TABLE IF EXISTS Menu;
+
+CREATE TABLE Menu (
+    id_menu INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nombre_menu VARCHAR(25) NOT NULL,
+    url_direcction VARCHAR(45) NOT NULL,
+    parent_id INT,
+    orden_menu INT NOT NULL,
+    estado_menu TINYINT(1) NOT NULL DEFAULT 1 
+);
+
+CREATE Table Departamentos( q
+    id_depa INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nombre_departamento VARCHAR(40) UNIQUE NOT NULL
+);
+
+
+CREATE TABLE Personas(
+    id_user INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+     nombre_user VARCHAR(25) NOT NULL,
+     apellido_user VARCHAR(25) NOT NULL,
+     user_email VARCHAR(40) UNIQUE NOT NULL,
+    user_password VARCHAR(30) NOT NULL,
+    telefono VARCHAR(10) UNIQUE NOT NULL,
+    id_departamento INT NOT NULL
+); 
+
+Select * From menu;
+
+
+-- -- 1. Menú Principal
+-- INSERT INTO Menu (nombre_menu, url_direcction, parent_id, orden_menu, estado_menu) 
+-- VALUES 
+-- ('Inicio', '/inicio', NULL, 1, 1),
+-- ('Servicios', '/servicios', NULL, 2, 1),
+-- ('Productos', '/productos', NULL, 3, 1),
+-- ('Blog', '/blog', NULL, 4, 1),
+-- ('Contacto', '/contacto', NULL, 5, 1);
+
+-- -- 2. Submenús de "Servicios"
+-- INSERT INTO Menu (nombre_menu, url_direcction, parent_id, orden_menu, estado_menu) 
+-- VALUES 
+-- ('Desarrollo Web', '/servicios/desarrollo-web', 2, 1, 1),
+-- ('Consultoría', '/servicios/consultoria', 2, 2, 1),
+-- ('Marketing Digital', '/servicios/marketing', 2, 3, 1);
+
+-- -- 3. Submenús de "Desarrollo Web"
+-- INSERT INTO Menu (nombre_menu, url_direcction, parent_id, orden_menu, estado_menu) 
+-- VALUES 
+-- ('Front-End', '/servicios/desarrollo-web/front-end', 6, 1, 1),
+-- ('Back-End', '/servicios/desarrollo-web/back-end', 6, 2, 1);
+
+-- -- 4. Submenú dentro de "Back-End"
+-- INSERT INTO Menu (nombre_menu, url_direcction, parent_id, orden_menu, estado_menu) 
+-- VALUES 
+-- ('APIs', '/servicios/desarrollo-web/back-end/apis', 7, 1, 1),
+-- ('Bases de Datos', '/servicios/desarrollo-web/back-end/databases', 7, 2, 1);
+
+-- -- 5. Submenú dentro de "Consultoría"
+-- INSERT INTO Menu (nombre_menu, url_direcction, parent_id, orden_menu, estado_menu) 
+-- VALUES 
+-- ('Auditoría', '/servicios/consultoria/auditoria', 7, 1, 1),
+-- ('Gestión Empresarial', '/servicios/consultoria/gestion', 7, 2, 1);
+
+-- -- 6. Submenús de "Productos"
+-- INSERT INTO Menu (nombre_menu, url_direcction, parent_id, orden_menu, estado_menu) 
+-- VALUES 
+-- ('Electrónica', '/productos/electronica', 3, 1, 1),
+-- ('Muebles', '/productos/muebles', 3, 2, 1);
+
+-- -- 7. Submenú dentro de "Electrónica"
+-- INSERT INTO Menu (nombre_menu, url_direcction, parent_id, orden_menu, estado_menu) 
+-- VALUES 
+-- ('Computadoras', '/productos/electronica/computadoras', 9, 1, 1),
+-- ('Smartphones', '/productos/electronica/smartphones', 9, 2, 1);
+
+-- -- 8. Submenú dentro de "Muebles"
+-- INSERT INTO Menu (nombre_menu, url_direcction, parent_id, orden_menu, estado_menu) 
+-- VALUES 
+-- ('Sofás', '/productos/muebles/sofas', 10, 1, 1),
+-- ('Mesas', '/productos/muebles/mesas', 10, 2, 1);
+
+-- -- 9. Submenús de "Blog"
+-- INSERT INTO Menu (nombre_menu, url_direcction, parent_id, orden_menu, estado_menu) 
+-- VALUES 
+-- ('Tecnología', '/blog/tecnologia', 4, 1, 1),
+-- ('Negocios', '/blog/negocios', 4, 2, 1);
+
+-- -- 10. Submenú dentro de "Tecnología"
+-- INSERT INTO Menu (nombre_menu, url_direcction, parent_id, orden_menu, estado_menu) 
+-- VALUES 
+-- ('Innovaciones', '/blog/tecnologia/innovaciones', 11, 1, 1),
+-- ('Tendencias', '/blog/tecnologia/tendencias', 11, 2, 1);
+
+-- -- 11. Submenús de "Contacto"
+-- INSERT INTO Menu (nombre_menu, url_direcction, parent_id, orden_menu, estado_menu) 
+-- VALUES 
+-- ('Formulario', '/contacto/formulario', 5, 1, 1),
+-- ('Mapa', '/contacto/mapa', 5, 2, 1);
+ 
+
+SELECT * FROM personas;
+DESCRIBE personas;
+
+Describe Departamentos;
